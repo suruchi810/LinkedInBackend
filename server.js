@@ -10,7 +10,11 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "https://frontendchat-knx1.onrender.com", // Correct the origin to match your front-end
+    methods: ["GET", "POST"],
+    credentials: true
+}));
 app.use(express.json());
 
 app.use(postsRoutes);
