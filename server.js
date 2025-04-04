@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://frontendchat-knx1.onrender.com", // Correct the origin to match your front-end
+    origin: "https://linked-in-frontend-three.vercel.app/", // Correct the origin to match your front-end
     methods: ["GET", "POST"],
     credentials: true
 }));
