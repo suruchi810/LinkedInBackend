@@ -1,0 +1,55 @@
+# POST http://localhost:9000/register HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "email": "john@example.com",
+#     "password": "johnPass123",
+#     "name": "John Doe",
+#     "username":"@john"
+# }
+
+# GET  http://localhost:9000/get_usr_and_profile HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token":"43a1fff705e67de51b15408d600ce9ebfb99de48f74dbefaee1671aa88e7215a"
+# }
+
+# POST http://localhost:9000/user_update HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token":"b9e1acb5331b7b43d4cab29dc3703fac4b1eabe62152fe2d0c7e676f4b8e0e81",
+#     "bio":"engineering"
+# }
+
+# POST  http://localhost:9000/incLikes HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token":"e2bc9df626c5cf85f2498b3198cfa969038c105ee4d0cb7837057aaea4387cfb"
+# }
+
+# GET  http://localhost:9000/user/download_resume HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token":"b9e1acb5331b7b43d4cab29dc3703fac4b1eabe62152fe2d0c7e676f4b8e0e81"
+# }
+
+# POST http://localhost:9000/post HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token": "6fbdb0100e65b058ba80f49fac3cabe44af99c55ec325f11e128d0834db750c3",
+#     "body": "hello world"
+# }
+
+# DELETE  http://localhost:9000/deletePosts HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "token": "6fbdb0100e65b058ba80f49fac3cabe44af99c55ec325f11e128d0834db750c3",
+#     "post_id": "677f3396d112b44693826018"
+# }
+
