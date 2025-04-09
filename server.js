@@ -10,11 +10,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-    origin: "https://linked-in-frontend-three.vercel.app/", // Correct the origin to match your front-end
-    methods: ["GET", "POST"],
-    credentials: true
-}));
+app.use(cors);
 app.use(express.json());
 
 app.use(postsRoutes);
