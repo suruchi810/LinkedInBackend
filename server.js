@@ -1,30 +1,21 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import postsRoutes from './routes/posts.routes.js';
 import userRoutes from './routes/user.routes.js';
-const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
 
 // Middleware
-
-const allowedOrigins = ['https://linked-in-frontend-three.vercel.app'];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, // if you're using cookies or auth headers
+    origin: "https://linked-in-frontend-three.vercel.app/", // Correct the origin to match your front-end
+    methods: ["GET", "POST"],
+    credentials: true
 }));
-
-
+app.use(express.json());
 
 app.use(postsRoutes);
 app.use(userRoutes);
