@@ -11,11 +11,17 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://linked-in-frontend-three.vercel.app/", // Correct the origin to match your front-end
+    origin: function (origin, callback) {
+        const allowedOrigins = ["https://linked-in-frontend-three.vercel.app"];
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            return callback(null, true);
+        }
+        callback(new Error("Not allowed by CORS"));
+    },
     methods: ["GET", "POST"],
     credentials: true
 }));
-app.use(express.json());
+
 
 app.use(postsRoutes);
 app.use(userRoutes);
