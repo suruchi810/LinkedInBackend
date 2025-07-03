@@ -10,11 +10,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: 'https://linkedinbackend-i0sg.onrender.com',
+const corsOptions = {
+  origin: 'https://linked-in-frontend-three.vercel.app',
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true
-}));
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight
+
 app.use(express.json());
 
 app.use(postsRoutes);
